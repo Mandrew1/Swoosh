@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SkillVC.swift
 //  Swoosh
 //
 //  Created by Andrew Carras1 on 8/5/17.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SkillVC: UIViewController {
+
+    var player : Player!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,9 +23,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindFromSkillViewController(unwindSegue: UIStoryboardSegue) {
-    
+    @IBAction func backPressed(_ sender: Any) {
+        performSegue(withIdentifier: "backSegue", sender: self)
     }
-
+    
 }
-

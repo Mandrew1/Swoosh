@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nYi-R9-hTT"/>
                         <viewControllerLayoutGuide type="bottom" id="mav-8S-n3Q"/>
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="136.95652173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="Iam-br-MUI">
             <objects>
-                <viewController id="VpR-nn-gbv" sceneMemberID="viewController">
+                <viewController id="VpR-nn-gbv" customClass="LeagueVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="77y-aN-2oA"/>
                         <viewControllerLayoutGuide type="bottom" id="y9E-iB-kNF"/>
@@ -142,6 +142,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="mensTapped:" destination="VpR-nn-gbv" eventType="touchUpInside" id="dap-I7-VdX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2j-dN-HKk" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="87" width="354" height="62"/>
@@ -154,6 +157,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="womensTapped:" destination="VpR-nn-gbv" eventType="touchUpInside" id="IY9-UL-pob"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rm-vY-mng" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="174" width="354" height="62"/>
@@ -166,10 +172,13 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="coedTapped:" destination="VpR-nn-gbv" eventType="touchUpInside" id="I2d-ck-zaG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stj-qz-fUh" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stj-qz-fUh" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                 <rect key="frame" x="30" y="639" width="354" height="53"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39709974320000002" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
@@ -178,7 +187,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LzM-i7-Qva" kind="show" id="G7W-g6-4fR"/>
+                                    <action selector="nextPressed:" destination="VpR-nn-gbv" eventType="touchUpInside" id="5Dg-gf-hx1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhf-sn-9Fu">
@@ -211,16 +220,20 @@
                             <constraint firstItem="y9E-iB-kNF" firstAttribute="top" secondItem="stj-qz-fUh" secondAttribute="bottom" constant="44" id="zjd-xO-ss7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButon" destination="stj-qz-fUh" id="xoV-NM-ip9"/>
+                        <segue destination="LzM-i7-Qva" kind="show" identifier="leagueSegue" id="lhd-5c-v5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fen-Vs-Vxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="E1P-f2-wkj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1150.7246376811595" y="136.95652173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="OnI-Kg-A2V">
             <objects>
-                <viewController id="LzM-i7-Qva" sceneMemberID="viewController">
+                <viewController id="LzM-i7-Qva" customClass="SkillVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="40K-je-UuM"/>
                         <viewControllerLayoutGuide type="bottom" id="xby-1a-5ea"/>
@@ -276,6 +289,9 @@
                                 <rect key="frame" x="20" y="20" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="LzM-i7-Qva" eventType="touchUpInside" id="TZr-cQ-rGE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,6 +312,9 @@
                             <constraint firstItem="smN-HN-olC" firstAttribute="top" secondItem="53a-AG-ASD" secondAttribute="top" id="uGv-w5-6Kl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="VpR-nn-gbv" kind="show" identifier="backSegue" id="I95-Rb-6WX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9av-SO-9mJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,4 +328,7 @@
         <image name="swooshLogo" width="119" height="20"/>
         <image name="welcomeScreenBG" width="414" height="736"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="I95-Rb-6WX"/>
+    </inferredMetricsTieBreakers>
 </document>
